@@ -1,0 +1,10 @@
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/icudtl.dat
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/flutter_windows.dll
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/flutter_assets/AssetManifest.smcbin
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+E:/gp23/ChefwNos/android/chefwnos/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag

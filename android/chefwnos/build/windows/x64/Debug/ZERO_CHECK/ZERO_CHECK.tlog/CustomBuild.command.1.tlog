@@ -1,0 +1,10 @@
+^E:\GP23\CHEFWNOS\ANDROID\CHEFWNOS\BUILD\WINDOWS\CMAKEFILES\59A213C09D3688916FC436B89150A739\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SE:/gp23/ChefwNos/android/chefwnos/windows -BE:/gp23/ChefwNos/android/chefwnos/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/gp23/ChefwNos/android/chefwnos/build/windows/chefwnos.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

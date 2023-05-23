@@ -1,0 +1,10 @@
+^E:\GP23\CHEFWNOS\ANDROID\CHEFWNOS\WINDOWS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SE:/gp23/ChefwNos/android/chefwnos/windows -BE:/gp23/ChefwNos/android/chefwnos/build/windows --check-stamp-file E:/gp23/ChefwNos/android/chefwnos/build/windows/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
