@@ -3,3 +3,4 @@
 *.0
 *.bin
 DSGR/data/neg/recipes_neg
+*.pkl
