@@ -26,7 +26,7 @@ def get_recipes():
     for index, row in recipes_df.iterrows():
         recipe = Recipe(index, row['name'], row['steps'], row['ingredients'], row['tags'], row['cuisine'], row['time'])
         recipes.append(recipe.serialize())
-    return {'recipes': recipes}
+    return recipes
 
 #return a recipe with a specific id 
 @app.route('/recipes/<int:id>', methods=['GET'])
