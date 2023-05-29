@@ -1,0 +1,10 @@
+^E:\STUDY\2022-2023\GP\ANDROID\CHEFWNOS\BUILD\WINDOWS\CMAKEFILES\A756A334297E6B5BE470CF374D4DC18D\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -30,6 +30,10 @@ flutter_lints
 2.17
 file:///C:/Users/LEGION/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.1/
 file:///C:/Users/LEGION/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.1/lib/
+get
+2.15
+file:///C:/Users/LEGION/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.5/
+file:///C:/Users/LEGION/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.5/lib/
 js
 2.19
 file:///C:/Users/LEGION/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.7/
@@ -82,10 +86,6 @@ vector_math
 2.14
 file:///C:/Users/LEGION/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4/
 file:///C:/Users/LEGION/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4/lib/
-chefwnos
-3.0
-file:///C:/Users/LEGION/Documents/GitHub/ChefwNos/android/chefwnos/
-file:///C:/Users/LEGION/Documents/GitHub/ChefwNos/android/chefwnos/lib/
 sky_engine
 3.0
 file:///C:/src/flutter_windows_3.10.1-stable/flutter/bin/cache/pkg/sky_engine/
@@ -98,4 +98,8 @@ flutter_test
 3.0
 file:///C:/src/flutter_windows_3.10.1-stable/flutter/packages/flutter_test/
 file:///C:/src/flutter_windows_3.10.1-stable/flutter/packages/flutter_test/lib/
+chefwnos
+3.0
+file:///E:/Study/2022-2023/GP/Android/chefwnos/
+file:///E:/Study/2022-2023/GP/Android/chefwnos/lib/
 2
