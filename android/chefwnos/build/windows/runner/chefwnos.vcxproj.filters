@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\runner\flutter_window.cpp">
+    <ClCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\runner\flutter_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\runner\main.cpp">
+    <ClCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\runner\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\runner\utils.cpp">
+    <ClCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\runner\utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\runner\win32_window.cpp">
+    <ClCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\runner\win32_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\flutter\generated_plugin_registrant.cc">
+    <ClCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\flutter\generated_plugin_registrant.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\gp23\ChefwNos\android\chefwnos\windows\runner\CMakeLists.txt" />
+    <CustomBuild Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\runner\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\runner\Runner.rc">
+    <ResourceCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\runner\Runner.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{09EECDD6-0978-358B-971C-CD2A47B81496}</UniqueIdentifier>
+      <UniqueIdentifier>{DB191699-C636-3C3C-8824-703EB0D71DCE}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

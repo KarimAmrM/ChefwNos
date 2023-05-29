@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
+    <ClCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
+    <ClCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\gp23\ChefwNos\android\chefwnos\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc">
+    <ClCompile Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\gp23\ChefwNos\android\chefwnos\windows\flutter\CMakeLists.txt" />
+    <CustomBuild Include="E:\Study\2022-2023\GP\Android\chefwnos\windows\flutter\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{405F6E07-BC02-3ECE-B565-9E3A47FAB330}</UniqueIdentifier>
+      <UniqueIdentifier>{27FDF05C-80F3-38D9-BBF9-9172CB037B2A}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{09EECDD6-0978-358B-971C-CD2A47B81496}</UniqueIdentifier>
+      <UniqueIdentifier>{DB191699-C636-3C3C-8824-703EB0D71DCE}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

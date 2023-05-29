@@ -1,4 +1,4 @@
-# Install script for directory: E:/gp23/ChefwNos/android/chefwnos/windows/runner
+# Install script for directory: E:/Study/2022-2023/GP/Android/chefwnos/windows/runner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
