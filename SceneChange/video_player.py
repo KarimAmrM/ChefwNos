@@ -90,7 +90,7 @@ for scene in scenes:
     scene_frames.append(scene[0])
 
 
-open_cv_video = cv2.VideoCapture("C:/Users/Fastora/Documents/GitHub/ChefwNos/SceneChange/recipe1.mp4")
+open_cv_video = cv2.VideoCapture("C:/Users/Fastora/Documents/GitHub/ChefwNos/recipe1.mp4")
 count = 0
 frame_time = {}
 #count number of frames in video
@@ -120,7 +120,7 @@ vid_player.pack(expand=True, fill="both")
 play_pause_btn = tk.Button(root, text="Play", command=play_pause)
 play_pause_btn.pack()
 
-skip_plus_5sec = tk.Button(root, text="Skip -5 sec", command=lambda: skip(current_frame_index, scene_frames, 'minus'))
+skip_plus_5sec = tk.Button(root, text="Skip to previous step", command=lambda: skip(current_frame_index, scene_frames, 'minus'))
 skip_plus_5sec.pack(side="left")
 
 start_time = tk.Label(root, text=str(datetime.timedelta(seconds=0)))
@@ -139,7 +139,7 @@ vid_player.bind("<<Duration>>", update_duration)
 vid_player.bind("<<SecondChanged>>", update_scale)
 vid_player.bind("<<Ended>>", video_ended )
 
-skip_plus_5sec = tk.Button(root, text="Skip +5 sec", command=lambda: skip(current_frame_index, scene_frames, 'plus'))
+skip_plus_5sec = tk.Button(root, text="Skip to next step", command=lambda: skip(current_frame_index, scene_frames, 'plus'))
 skip_plus_5sec.pack(side="left")
 
 root.mainloop()

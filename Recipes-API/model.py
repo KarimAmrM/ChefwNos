@@ -1,7 +1,7 @@
 #define class Recipe to be used in the API
 #recipe has a name, steps, ingredients, tags and cuisine
 class Recipe:
-    def __init__(self, id, name, steps, ingredients, tags, cuisine, time):
+    def __init__(self, id, name, steps, ingredients, tags, cuisine, time, img):
         self.id = id
         self.name = name
         self.steps = steps
@@ -9,6 +9,7 @@ class Recipe:
         self.tags = tags
         self.cuisine = cuisine
         self.time = time
+        self.img = img
     
     def __repr__(self):
         print("Recipe: " + self.name)
@@ -24,7 +25,8 @@ class Recipe:
             'ingredients': self.ingredients,
             'tags': self.tags,
             'cuisine': self.cuisine,
-            'time': self.time
+            'time': self.time,
+            'img': self.img
         }
         
     def deserialize(self, data):
@@ -35,6 +37,7 @@ class Recipe:
         self.tags = data['tags']
         self.cuisine = data['cuisine']
         self.time = data['time']
+        self.img = data['img']
         
             
     

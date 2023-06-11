@@ -7,3 +7,11 @@ DSGR/data/neg/recipes_neg
 *.png
 *.mp4
 *.3gpp
+*.8
+chat/arabert/
+chat/arabert2arabert/
+*.log
+chat/flagged/*
+chat/runs/*
+*.zip
+chat/dialectal-conv/*

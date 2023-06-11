@@ -175,12 +175,12 @@ class ChatbotMachine(StateMachine):
             result = self.before_get_dsgr_recommendations(message)
         elif current_state == self.get_query_based_recommendations:
             result = self.before_get_query_based_recommendations(message)
-        elif current_state == self.end:
-            self.message_to_send = random.choice(accept_responses)
-            result = self.message_to_send
         else:
             result = None
             
+        if self.current_state == self.end:
+            self.message_to_send = random.choice(accept_responses)
+            result = self.message_to_send, self.recipe, True
         if result:
             return result
         else:
@@ -214,10 +214,10 @@ app = Flask(__name__)
 
 @app.route('/chat/start', methods=['GET'])
 def chat():
-    if chatbot.current_state == ChatbotMachine.start:
-        #send greeting message and ask for entities
-        response = "هلا، أنا بوت الطبخ، ممكن أساعدك في البحث عن وصفات طبخ. عاوز تدور على أي نوع من الوصفات؟"
-        return response
+    #send greeting message and ask for entities
+    chatbot.reset()
+    response = "هلا، أنا بوت الطبخ، ممكن أساعدك في البحث عن وصفات طبخ. عاوز تدور على أي نوع من الوصفات؟"
+    return jsonify({'response': response})
 
 #route chat/msg to get response
 @app.route('/chat', methods=['POST'])
@@ -231,6 +231,8 @@ def chatbot_api():
     #if we got reponse type tuple, then we have a recipe to recommend 
     #and we need to send the recipe name and the response
     if isinstance(response, tuple):
+        if len(response) == 3:
+            return jsonify({'response': response[0], 'recipe': response[1], 'end': response[2]})
         return jsonify({'response': response[0], 'recipe': response[1]})
     return jsonify({'response': response})
         

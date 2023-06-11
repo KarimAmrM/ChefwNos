@@ -6,7 +6,7 @@ from dsgr.dsgr_recommender import dsgr
 from cbow_rec.cbow_recipes import RecipesCBOW
 from elastic_recipes.elastic_recipes import ElasticRecipes
 
-recipes = pd.read_json('data/recipes_cleaned_1.json')
+recipes = pd.read_json('data/recipes_cleaned_2.json')
 for i, data in recipes.iterrows():
     ing = []
     for j in data['ingredients']:
