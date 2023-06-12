@@ -2,6 +2,7 @@ import torch
 import json
 import pandas as pd
 import numpy as np
+import random
 from dsgr.dsgr_recommender import dsgr
 from cbow_rec.cbow_recipes import RecipesCBOW
 from elastic_recipes.elastic_recipes import ElasticRecipes
@@ -30,7 +31,7 @@ def initialize():
     cbow_recipes.get_recipe_matrix(recipes)
     
     dsgr_recommender = dsgr()
-    dsgr_recommender.preprocess(user_id=0)#user_id is 0 for now
+    dsgr_recommender.preprocess(user_id=26039)#user_id is 44531 user2 for now #26039 user1
     dsgr_recommender.get_graphs()
 
     return elastic_recipes, cbow_recipes, dsgr_recommender
@@ -98,7 +99,7 @@ def search(entities, elastic_recipes, cbow_recipes,msg,user=None):
             results.append(recipe)        
     
     #user recipes will be static for now
-    user_recipes_id = [5, 61, 613, 1004, 5539]
+    user_recipes_id = [5, 61, 613, 1004, 5539, 513, 14]
     user_vector = []
     user_vector_cbow = []
     results_cbow = []
@@ -121,9 +122,9 @@ def search(entities, elastic_recipes, cbow_recipes,msg,user=None):
     return results
     
 def dsgr_recommend(dsgr, elastic_recipes,user=None):
-    result = dsgr.get_recommendations()
+    ids = dsgr.get_recommendations()
     results = []
-    for id in result:
+    for id in ids:
         recipe = get_recipe_from_df(recipes, id)
         results.append(recipe)
-    return results
+    return results, ids

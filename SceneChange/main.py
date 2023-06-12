@@ -27,7 +27,7 @@ os.makedirs(frame_path)
 
 
 
-video_name = "recipe1.mp4"
+video_name = "recipe3.mp4"
 extract_features(video_name)
 
 model = Resnet34(output_layer = "layer4")

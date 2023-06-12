@@ -81,7 +81,7 @@ def video_ended(event):
     progress_slider.set(0)
 
 
-scene_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"scenes.pkl")
+scene_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"scenes/scenes.pkl")
 scenes = pkl.load(open(scene_path,"rb"))
 
 #for each scene get the first frame and add it to the list
@@ -90,7 +90,7 @@ for scene in scenes:
     scene_frames.append(scene[0])
 
 
-open_cv_video = cv2.VideoCapture("C:/Users/Fastora/Documents/GitHub/ChefwNos/recipe1.mp4")
+open_cv_video = cv2.VideoCapture("C:/Users/Fastora/Documents/GitHub/ChefwNos/SceneChange/recipe2.mp4")
 count = 0
 frame_time = {}
 #count number of frames in video

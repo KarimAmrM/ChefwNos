@@ -247,4 +247,8 @@ class dsgr:
                     candidate_repetition[candidate[i][j]] += 1
         candidate_repetition = sorted(candidate_repetition.items(), key=lambda x: x[1], reverse=True)
         candidate_repetition = [i[0] for i in candidate_repetition]
+        #get candidate recipes that are in the user's history
+        user_items = self.user_data['item_id'].values
+        #from the candidate recipes, remove the ones that are not in the user's history
+        candidate_repetition = [i for i in candidate_repetition if i not in user_items]
         return candidate_repetition

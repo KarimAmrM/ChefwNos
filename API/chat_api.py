@@ -7,7 +7,7 @@ from recommender_utils import search, initialize, dsgr_recommend
 import random
 import torch
 import spacy
-
+from model import Recipe
 class ChatbotMachine(StateMachine):
     "A chatbot machine"
     start = State(initial=True)
@@ -100,7 +100,7 @@ class ChatbotMachine(StateMachine):
             self.message_to_send = random.choice(ask_for_query_responses)
             return self.message_to_send
         elif "Refuse" in intent:
-            self.recommendations = dsgr_recommend(self.dsgr, self.elastic_recipes)
+            self.recommendations,_ = dsgr_recommend(self.dsgr, self.elastic_recipes)
             self.recommendations_index = 0
             self.recipe = self.recommendations[self.recommendations_index]
             self.message_to_send = random.choice(giving_recommendations).format(self.recipe['name'])
@@ -109,7 +109,7 @@ class ChatbotMachine(StateMachine):
         return None
             
     def after_get_dsgr_recommendations(self):
-        self.recommendations = dsgr_recommend(self.dsgr, self.elastic_recipes)
+        self.recommendations,_ = dsgr_recommend(self.dsgr, self.elastic_recipes)
         self.recommendations_index = 0
         self.recipe = self.recommendations[self.recommendations_index]
         self.message_to_send = random.choice(giving_recommendations).format(self.recipe['name'])
@@ -184,7 +184,7 @@ class ChatbotMachine(StateMachine):
         if result:
             return result
         else:
-            return "Invalid state transition."
+            return "مش فاهمك الصراحة"
 
 
 ask_responses = ["حاضر هشوفلك", "تمام ثانية", "هدورلك اهو", "ماشي حاضر"]
@@ -216,7 +216,7 @@ app = Flask(__name__)
 def chat():
     #send greeting message and ask for entities
     chatbot.reset()
-    response = "هلا، أنا بوت الطبخ، ممكن أساعدك في البحث عن وصفات طبخ. عاوز تدور على أي نوع من الوصفات؟"
+    response = "هلا، أنا بوت الطبخ، ممكن أساعدك في البحث عن وصفات طبخ. عاوز تدور على أي ؟"
     return jsonify({'response': response})
 
 #route chat/msg to get response
@@ -235,6 +235,33 @@ def chatbot_api():
             return jsonify({'response': response[0], 'recipe': response[1], 'end': response[2]})
         return jsonify({'response': response[0], 'recipe': response[1]})
     return jsonify({'response': response})
+       
+@app.route('/get_recommendations/', methods=['GET'])
+def get_recommendations():
+    dsgr_recommendations,ids = dsgr_recommend(chatbot.dsgr, chatbot.elastic_recipes)
+    final_recommendations = []
+    duplicate_ids = {}
+    for id in ids:
+        k_ids = chatbot.cbow_recipes.get_k_nearest_recipes(id, 5)
+        for k_id in k_ids:
+            if k_id in duplicate_ids:
+                continue
+            duplicate_ids[k_id] = True
+            elastic_recipe = chatbot.elastic_recipes.get_recipe_by_id('recipes', k_id)
+            final_recommendations.append(elastic_recipe)
+    #final_recommendations.extend(dsgr_recommendations)
+    #remove None values from list
+    final_recommendations = [x for x in final_recommendations if x is not None]
+    #get 10 random recipes
+    final_recommendations = random.sample(final_recommendations, 20)
+    #
+    recipes = []
+    for recommendation in final_recommendations:
+        if recommendation['img'] == None:
+            continue
+        recipe = Recipe(recommendation['Id'], recommendation['name'], recommendation['steps'], recommendation['ingredients'], recommendation['tags'], recommendation['cuisine'], recommendation['time'], recommendation['img'])
+        recipes.append(recipe.serialize())
+    return recipes 
         
 @app.route('/chat/reset', methods=['GET'])
 def reset():
